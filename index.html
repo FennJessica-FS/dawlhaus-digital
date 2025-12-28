@@ -4,19 +4,278 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dawlhaus Digital | Jessica Fenn</title>
+
+  <style>
+    :root{
+      --bg: #0b0b10;
+      --card: rgba(255,255,255,0.06);
+      --text: #f5f5f7;
+      --muted: rgba(245,245,247,0.72);
+      --line: rgba(255,255,255,0.10);
+      --accent: #b68cff; /* purple pop */
+      --accent2: #ff77b7; /* pink pop */
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(182,140,255,0.25), transparent 60%),
+        radial-gradient(900px 500px at 80% 0%, rgba(255,119,183,0.20), transparent 55%),
+        radial-gradient(900px 500px at 80% 90%, rgba(182,140,255,0.18), transparent 55%),
+        var(--bg);
+    }
+
+    a{ color: var(--text); }
+    a:hover{ opacity:0.9; }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 44px 18px 70px;
+    }
+
+    .pill{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero{
+      margin-top: 18px;
+      padding: 26px 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    h1{
+      margin: 6px 0 10px;
+      font-size: 44px;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 70ch;
+    }
+
+    .ctaRow{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      text-decoration:none;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 160px;
+    }
+    .btnPrimary{
+      border: none;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #0b0b10;
+    }
+    .btnSmall{
+      min-width: auto;
+      padding: 10px 12px;
+      font-weight: 600;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    @media (min-width: 860px){
+      .grid{ grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .card{
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .section{
+      margin-top: 26px;
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+    .section h2{
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    @media (min-width: 860px){
+      .twoCol{ grid-template-columns: 1.2fr 0.8fr; }
+    }
+
+    ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .mini{
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .footer{
+      margin-top: 22px;
+      color: rgba(245,245,247,0.55);
+      font-size: 13px;
+      text-align:center;
+    }
+
+    .tag{
+      display:inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      font-size: 12px;
+      color: var(--muted);
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Dawlhaus Digital</h1>
-  <p>Founded by Jessica Fenn</p>
+  <div class="wrap">
+    <div class="pill">
+      <span>✨</span>
+      <span>Dawlhaus Digital • Founded by Jessica Fenn</span>
+    </div>
 
-  <p>
-    I build fast-turn landing pages and branding kits for small businesses,
-    creators, and startups.
-  </p>
+    <div class="hero">
+      <h1>Launch-ready landing pages + branding kits.</h1>
+      <p class="sub">
+        I help small businesses, creators, and startups look legit fast — with clean design,
+        mobile-friendly builds, and quick turnaround. Full stack web dev student building modern, real-world projects.
+      </p>
 
-  <p>
-    Contact:
-    <a href="mailto:dawlhausdigital@gmail.com">dawlhausdigital@gmail.com</a>
-  </p>
+      <div class="ctaRow">
+        <a class="btn btnPrimary" href="mailto:dawlhausdigital@gmail.com?subject=Dawlhaus%20Digital%20Project%20Inquiry">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/jessicafenn/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn btnSmall" href="https://github.com/FennJessica-FS" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>One-page landing pages</h3>
+          <p>Perfect for services, events, offers, and lead capture. Clean layout, clear CTA, and mobile-first.</p>
+        </div>
+        <div class="card">
+          <h3>Branding Kit Lite</h3>
+          <p>Color palette, font pairing, and a mini style guide so your brand looks consistent everywhere.</p>
+        </div>
+        <div class="card">
+          <h3>Website refresh + fixes</h3>
+          <p>Spacing, mobile layout issues, readability, and quick polish so your site feels modern again.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section twoCol">
+      <div>
+        <h2>How to work with me</h2>
+        <p class="sub">
+          I keep projects simple and fast so you can get a real result without endless back-and-forth.
+          If you’re on a deadline, I’m your girl.
+        </p>
+        <ul>
+          <li><strong>Step 1:</strong> You email me what you need + any examples you like.</li>
+          <li><strong>Step 2:</strong> I send a quick plan and timeline.</li>
+          <li><strong>Step 3:</strong> You get a first draft fast (usually within a few days).</li>
+          <li><strong>Step 4:</strong> One revision round, then launch.</li>
+        </ul>
+        <p class="mini">Tip: If you already have a logo/colors, send them. If not, we’ll build your kit first.</p>
+      </div>
+
+      <div>
+        <h2>What I’m best at</h2>
+        <span class="tag">Landing pages</span>
+        <span class="tag">Brand direction</span>
+        <span class="tag">Responsive design</span>
+        <span class="tag">UI/UX mindset</span>
+        <span class="tag">HTML/CSS/JS</span>
+        <span class="tag">React (projects)</span>
+        <span class="tag">APIs</span>
+        <span class="tag">Git/GitHub</span>
+
+        <div style="margin-top:14px;">
+          <a class="btn btnPrimary" href="mailto:dawlhausdigital@gmail.com?subject=Project%20Quote%20Request%20(Dawlhaus%20Digital)">Request a quote</a>
+          <p class="mini">Email works for now. Next upgrade: a quick quote form.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Portfolio (coming next)</h2>
+      <p class="sub">
+        Next we’ll add 3–6 tiles with screenshots + links (GitHub + Figma). Even “concept projects” are totally fine.
+      </p>
+      <p class="mini">When you’re ready, paste your project links and I’ll format them nicely.</p>
+    </div>
+
+    <div class="footer">
+      © <span id="year"></span> Dawlhaus Digital • Detroit-made energy
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
