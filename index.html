@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dawlhaus Digital | Jessica Fenn</title>
 
+  <!-- Basic SEO -->
+  <meta name="description" content="Dawlhaus Digital by Jessica Fenn — launch-ready landing pages, Canva websites, and branding kits for small businesses, creators, and startups. Fast turnaround, clean design, mobile-friendly builds." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph (social previews) -->
+  <meta property="og:title" content="Dawlhaus Digital | Jessica Fenn" />
+  <meta property="og:description" content="Launch-ready landing pages, Canva websites, and branding kits. Fast turnaround. Clean design. Mobile-friendly builds." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fennjessica-fs.github.io/dawlhaus-digital/" />
+
+  <!-- Optional: add a favicon.png to your repo root -->
+  <link rel="icon" href="favicon.png" type="image/png" />
+
   <style>
     :root{
       --bg: #0b0b10;
@@ -15,9 +28,13 @@
       --accent: #b68cff;
       --accent2: #ff77b7;
       --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --success: rgba(120,255,196,0.18);
+      --error: rgba(255,120,120,0.18);
     }
 
     *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -57,6 +74,8 @@
       background: rgba(255,255,255,0.04);
       border-radius: 18px;
       box-shadow: var(--shadow);
+      position: relative;
+      z-index: 1;
     }
 
     h1{
@@ -93,6 +112,8 @@
       font-weight: 600;
       color: var(--text);
       min-width: 160px;
+      cursor: pointer;
+      user-select:none;
     }
     .btnPrimary{
       border: none;
@@ -122,6 +143,8 @@
       border: 1px solid var(--line);
       background: var(--card);
       box-shadow: var(--shadow);
+      position: relative;
+      z-index: 1;
     }
 
     .card h3{
@@ -142,12 +165,15 @@
       border-radius: 18px;
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.03);
+      position: relative;
+      z-index: 1;
     }
     .section h2{
       margin: 0 0 12px;
       font-size: 22px;
       letter-spacing: -0.01em;
     }
+
     .twoCol{
       display:grid;
       grid-template-columns: 1fr;
@@ -171,13 +197,6 @@
       margin-top: 10px;
     }
 
-    .footer{
-      margin-top: 22px;
-      color: rgba(245,245,247,0.55);
-      font-size: 13px;
-      text-align:center;
-    }
-
     .tag{
       display:inline-flex;
       padding: 6px 10px;
@@ -188,6 +207,77 @@
       color: var(--muted);
       margin-right: 8px;
       margin-top: 8px;
+    }
+
+    /* Form styles (clickable + consistent) */
+    .contactForm{
+      max-width: 720px;
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+      position: relative;
+      z-index: 20;
+    }
+    .contactForm .row{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 740px){
+      .contactForm .row{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .contactForm label{
+      display:flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .input{
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      outline: none;
+      font-size: 14px;
+      pointer-events: auto;
+    }
+    .input::placeholder{ color: rgba(245,245,247,0.55); }
+
+    .input:focus{
+      border-color: rgba(182,140,255,0.65);
+      box-shadow: 0 0 0 3px rgba(182,140,255,0.15);
+    }
+    textarea.input{ resize: vertical; }
+
+    .notice{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .notice.success{
+      background: var(--success);
+      color: rgba(245,245,247,0.92);
+    }
+    .notice.error{
+      background: var(--error);
+      color: rgba(245,245,247,0.92);
+    }
+
+    /* Safety: ensure nothing blocks typing/clicking */
+    form, input, textarea, button, iframe { pointer-events: auto !important; }
+
+    .footer{
+      margin-top: 22px;
+      color: rgba(245,245,247,0.55);
+      font-size: 13px;
+      text-align:center;
     }
   </style>
 </head>
@@ -200,14 +290,14 @@
     </div>
 
     <div class="hero">
-      <h1>Launch ready landing pages + branding kits.</h1>
+      <h1>Launch ready landing pages + Canva websites + branding kits.</h1>
       <p class="sub">
         I help small businesses, creators, and startups look legit fast — with clean design,
-        mobile-friendly builds, and quick turnaround. Full stack web dev student building modern, real-world projects.
+        mobile-friendly builds, and quick turnaround. Web dev student building modern, real-world projects.
       </p>
 
       <div class="ctaRow">
-        <a class="btn btnPrimary" href="https://tally.so/r/b59av2" target="_blank" rel="noreferrer">Request a quote</a>
+        <a class="btn btnPrimary" href="#quote">Request a quote</a>
         <a class="btn" href="https://www.linkedin.com/in/jessicafenn/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="btn btnSmall" href="https://github.com/FennJessica-FS" target="_blank" rel="noreferrer">GitHub</a>
       </div>
@@ -215,15 +305,15 @@
       <div class="grid">
         <div class="card">
           <h3>One page landing pages</h3>
-          <p>Perfect for services, events, offers, and lead capture. Clean layout, clear CTA, and mobile-first.</p>
+          <p>Perfect for services, events, offers, and lead capture. Clean layout, clear CTA, mobile-first.</p>
+        </div>
+        <div class="card">
+          <h3>Canva Website (fast + simple)</h3>
+          <p>Great for small businesses who want a beautiful site fast — without heavy tech or maintenance.</p>
         </div>
         <div class="card">
           <h3>Branding Kit Lite</h3>
           <p>Color palette, font pairing, and a mini style guide so your brand looks consistent everywhere.</p>
-        </div>
-        <div class="card">
-          <h3>Website refresh + fixes</h3>
-          <p>Spacing, mobile layout issues, readability, and quick polish so your site feels modern again.</p>
         </div>
       </div>
     </div>
@@ -236,9 +326,9 @@
           If you’re on a deadline, I’m your girl.
         </p>
         <ul>
-          <li><strong>Step 1:</strong> Fill out my quick quote form (takes 2 minutes).</li>
+          <li><strong>Step 1:</strong> Send a quick request (2 minutes).</li>
           <li><strong>Step 2:</strong> I reply with a plan + timeline.</li>
-          <li><strong>Step 3:</strong> You get a first draft fast (usually within a few days).</li>
+          <li><strong>Step 3:</strong> You get a first draft fast.</li>
           <li><strong>Step 4:</strong> One revision round, then launch.</li>
         </ul>
         <p class="mini">Tip: If you already have a logo/colors, send them. If not, we’ll build your kit first.</p>
@@ -247,6 +337,7 @@
       <div>
         <h2>What I’m best at</h2>
         <span class="tag">Landing pages</span>
+        <span class="tag">Canva websites</span>
         <span class="tag">Brand direction</span>
         <span class="tag">Responsive design</span>
         <span class="tag">UI/UX mindset</span>
@@ -254,125 +345,207 @@
         <span class="tag">React (projects)</span>
         <span class="tag">APIs</span>
         <span class="tag">Git/GitHub</span>
+        <span class="tag">AI-assisted workflows</span>
 
         <div style="margin-top:14px;">
-          <a class="btn btnPrimary" href="https://tally.so/r/b59av2" target="_blank" rel="noreferrer">Get a quote</a>
+          <a class="btn btnPrimary" href="#quote">Get a quote</a>
           <p class="mini">Fast replies. Clear scope. No chaos.</p>
         </div>
       </div>
     </div>
 
     <div class="section">
-      <h2>Services & Packages</h2>
+      <h2>Canva Website — the fastest way to look legit</h2>
       <p class="sub">
-        Quick, clear packages that keep your project moving and your timeline sane.
+        Want a professional site without the “tech headache”? A Canva Website is a great option when you want
+        something clean, branded, and live quickly.
       </p>
 
       <div class="grid" style="margin-top:14px;">
         <div class="card">
-          <h3>One Page Landing Page</h3>
-          <p><strong>Turnaround:</strong> 2–3 days</p>
+          <h3>Who it’s best for</h3>
           <ul>
-            <li>Modern, mobile-first layout</li>
-            <li>Clear call-to-action (CTA)</li>
-            <li>Quote form + contact setup</li>
-            <li>Basic SEO setup (title + description)</li>
-            <li>One revision round</li>
+            <li>Small businesses & creators who need a simple web presence</li>
+            <li>Service providers who want a clear CTA</li>
+            <li>Anyone who wants quick edits without code</li>
           </ul>
-          <p class="mini">Best for services, events, and lead capture.</p>
+        </div>
+        <div class="card">
+          <h3>What you get</h3>
+          <ul>
+            <li>Branded Canva Website design</li>
+            <li>Mobile-friendly layout</li>
+            <li>Buttons/links to book, buy, or contact</li>
+            <li>Basic copy cleanup + structure</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why it’s a win</h3>
+          <ul>
+            <li>Fast turnaround</li>
+            <li>Easy updates</li>
+            <li>No hosting stress</li>
+            <li>Looks clean + modern</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ctaRow" style="margin-top:16px;">
+        <a class="btn btnPrimary" href="#quote">Ask for a Canva Website</a>
+        <a class="btn" href="mailto:dawlhausdigital@gmail.com?subject=Canva%20Website%20Inquiry">Email me</a>
+      </div>
+
+      <p class="mini">Exploring AI-assisted workflows to speed up design, content, and development processes.</p>
+    </div>
+
+    <div class="section" id="pricing">
+      <h2>Simple Packages</h2>
+      <p class="sub">Quick, clear packages that keep your project moving.</p>
+
+      <div class="grid" style="margin-top:14px;">
+        <div class="card">
+          <h3>Canva Website</h3>
+          <p class="mini"><strong>Suggested:</strong> $150–$300</p>
+          <ul>
+            <li>1-page Canva Website design</li>
+            <li>Basic structure + CTA buttons</li>
+            <li>One revision round</li>
+            <li>Launch help</li>
+          </ul>
+          <p class="mini">Best for fast, clean web presence.</p>
         </div>
 
         <div class="card">
-          <h3>Branding Kit Lite</h3>
-          <p><strong>Turnaround:</strong> 1–2 days</p>
+          <h3>One Page Landing Page (Code)</h3>
+          <p class="mini"><strong>Suggested:</strong> $300–$700</p>
           <ul>
-            <li>Color palette (hex codes)</li>
-            <li>Font pairing + usage notes</li>
-            <li>Mini style guide (1-page PDF)</li>
-            <li>Social header or hero graphic</li>
+            <li>Mobile-first layout</li>
+            <li>Clear CTA + lead capture</li>
+            <li>Basic SEO (title/description)</li>
             <li>One revision round</li>
           </ul>
-          <p class="mini">Perfect if you need to look consistent fast.</p>
+          <p class="mini">Best for services, offers, and lead capture.</p>
         </div>
 
         <div class="card">
           <h3>Launch Bundle</h3>
-          <p><strong>Turnaround:</strong> 4–5 days</p>
+          <p class="mini"><strong>Suggested:</strong> $600–$1,200</p>
           <ul>
             <li>Landing page + Branding Kit Lite</li>
-            <li>On-brand visuals + layout polish</li>
-            <li>Stronger CTA + section flow</li>
+            <li>On-brand visuals + polish</li>
+            <li>Stronger flow + CTA</li>
             <li>One revision round</li>
           </ul>
-          <p class="mini">Best value if you’re starting from scratch.</p>
+          <p class="mini">Best value if you’re starting fresh.</p>
         </div>
       </div>
 
-      <div style="margin-top:16px;">
-        <a class="btn btnPrimary" href="https://tally.so/r/b59av2" target="_blank" rel="noreferrer">Get a quote</a>
-        <a class="btn" href="mailto:dawlhausdigital@gmail.com?subject=Dawlhaus%20Digital%20Project%20Inquiry">Or email me</a>
-      </div>
-    </div>
-
-    <div class="section">
-  <h2>Proof of Work</h2>
-  <p class="sub">
-    A mix of real builds and design work. Here are a few highlights.
-  </p>
-
-  <div class="grid" style="margin-top:14px;">
-    <div class="card">
-      <h3>Small Wins (App + UI System)</h3>
-      <p>
-        A micro self-care tracker app concept with routing, a consistent design system, and real build progress.
+      <p class="mini">
+        Pricing depends on scope + timeline. If you’re not sure which package fits, submit the form and I’ll recommend one.
       </p>
-      <div class="ctaRow" style="margin-top:12px;">
-        <a class="btn btnSmall" href="https://www.figma.com/design/TaR26dmCrpKZeF4PsANUcC/Small-Wins?node-id=0-1&p=f&t=kfTVPtXRZ8Cc2aSl-0" target="_blank" rel="noreferrer">View Figma</a>
-        <a class="btn btnSmall" href="https://tally.so/r/b59av2" target="_blank" rel="noreferrer">Work with me</a>
-      </div>
-      <p class="mini">Great example of how I think through UX + UI + build workflow.</p>
     </div>
 
-    <div class="card">
-      <h3>ReadySetTravel (Multi-page Website)</h3>
-      <p>
-        Travel website concept with multiple pages and a structured layout based on a style guide.
-      </p>
-      <div class="ctaRow" style="margin-top:12px;">
-        <a class="btn btnSmall" href="https://www.figma.com/design/ajqtJXj19QI34tLe10DZsd/ReadySetTravel---FennJessica?t=kfTVPtXRZ8Cc2aSl-0" target="_blank" rel="noreferrer">View Figma</a>
-        <a class="btn btnSmall" href="https://tally.so/r/b59av2" target="_blank" rel="noreferrer">Request a landing page</a>
-      </div>
-      <p class="mini">Shows my layout + visual design direction for real sites.</p>
+    <div class="section" id="quote">
+      <h2>Request a Quote</h2>
+      <p class="sub">Send a quick note and I’ll reply with a plan + timeline.</p>
+
+      <div id="formNotice" class="notice" style="display:none;"></div>
+
+      <form
+        id="quoteForm"
+        class="contactForm"
+        action="https://formspree.io/f/REPLACE_ME"
+        method="POST"
+      >
+        <!-- Required for Formspree autoresponses: keep the field name "email" -->
+        <div class="row">
+          <label>
+            <span class="mini">Name</span>
+            <input class="input" type="text" name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            <span class="mini">Email</span>
+            <input class="input" type="email" name="email" placeholder="you@example.com" required />
+          </label>
+        </div>
+
+        <label>
+          <span class="mini">What are you looking for?</span>
+          <select class="input" name="service" required>
+            <option value="" selected disabled>Select one</option>
+            <option>Canva Website</option>
+            <option>One Page Landing Page (Code)</option>
+            <option>Branding Kit Lite</option>
+            <option>Launch Bundle</option>
+            <option>Website refresh + fixes</option>
+          </select>
+        </label>
+
+        <label>
+          <span class="mini">Message</span>
+          <textarea class="input" name="message" rows="5" placeholder="Tell me your goal + timeline..." required></textarea>
+        </label>
+
+        <!-- Honeypot (basic spam protection) -->
+        <label style="display:none;">
+          <span class="mini">Do not fill this out</span>
+          <input class="input" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+        </label>
+
+        <button id="submitBtn" class="btn btnPrimary" type="submit">Send Message</button>
+
+        <p class="mini">
+          Or email me directly:
+          <a href="mailto:dawlhausdigital@gmail.com">dawlhausdigital@gmail.com</a>
+        </p>
+      </form>
     </div>
 
-    <div class="card">
-  <h3>Brand Kit Example: North & Pine Studio</h3>
-  <p>
-    Sample branding kit showing how I define visual direction for small businesses and creators.
-    This is an example of what clients receive with my Branding Kit Lite.
-  </p>
-
-  <p class="mini"><strong>Color Palette</strong></p>
-  <ul>
-    <li>Charcoal Black: #1f1f24</li>
-    <li>Soft Sage: #a8c3a0</li>
-    <li>Warm Sand: #e6dccf</li>
-    <li>Muted Clay: #c58b6d</li>
-  </ul>
-
-  <p class="mini" style="margin-top:12px;"><strong>Font Pairing</strong></p>
-  <ul>
-    <li>Headings: Poppins</li>
-    <li>Body: Inter</li>
-  </ul>
-
-  <p class="mini" style="margin-top:12px;">
-    Includes color usage guidance, font hierarchy, and basic layout direction.
-  </p>
-
-  <div class="ctaRow" style="margin-top:12px;">
-    <a class="btn btnSmall" href="https://tally.so/r/b59av2" target="_blank" rel="noreferrer">Request a brand kit</a>
+    <div class="footer">© <span id="yr"></span> Dawlhaus Digital • Built by Jessica Fenn</div>
   </div>
 
-  <p class="mini">Delivered as a clean, client ready style guide.</p>
-</div>
+  <script>
+    // Year
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    // Formspree submit (AJAX) -> success message on page, no redirect
+    const form = document.getElementById("quoteForm");
+    const notice = document.getElementById("formNotice");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      notice.style.display = "block";
+      notice.className = "notice";
+      notice.textContent = "Sending…";
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok) {
+          notice.className = "notice success";
+          notice.textContent = "Thanks! Your message was sent. I’ll reply soon 💜";
+          form.reset();
+        } else {
+          notice.className = "notice error";
+          notice.textContent = "Hmm—something didn’t send. Please try again or email me directly.";
+        }
+      } catch (err) {
+        notice.className = "notice error";
+        notice.textContent = "Network issue—please try again or email me directly.";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+      }
+    });
+  </script>
+</body>
+</html>
